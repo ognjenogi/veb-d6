@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+    <!-- Login form -->
+    <div id="login-container" class="container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <!-- Posts container -->
+    <div id="posts-container" class="container hidden">
+        <h1>Posts</h1>
+        <button id="new-post-btn">New Post</button>
+        <ul id="posts-list"></ul>
+    </div>
+
+    <!-- Post details -->
+    <div id="post-details" class="container hidden">
+        <h2 id="post-title"></h2>
+        <p>Author: <span id="post-author"></span></p>
+        <p>Date: <span id="post-date"></span></p>
+        <p id="post-content"></p>
+        <h3>Comments</h3>
+        <ul id="comments-list"></ul>
+        <form id="comment-form">
+            <textarea id="comment-text" placeholder="Your Comment" required></textarea>
+            <button type="submit">Add Comment</button>
+        </form>
+    </div>
+
+    <!-- New post form -->
+    <div id="new-post-form" class="container hidden">
+        <h2>New Post</h2>
+        <form id="post-form">
+            <input type="text" id="post-title-input" placeholder="Title" required>
+            <textarea id="post-content-input" placeholder="Content" required></textarea>
+            <button type="submit">Create Post</button>
+        </form>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
