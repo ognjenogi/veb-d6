@@ -59,10 +59,15 @@ public class CommentResource {
     }
     private String getToken(){
         String token = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
-        return token.split("Bearer ")[1];
-    }
-    private boolean isAuthorized() {
+        if(token!=null) return token.split("Bearer ")[1];
+        else return null;
 
-        return userService.isAuthorized(getToken());
+    }
+
+    private boolean isAuthorized() {
+        String t = getToken();
+        if(t!=null)return userService.isAuthorized(getToken());
+        else return false;
+
     }
 }

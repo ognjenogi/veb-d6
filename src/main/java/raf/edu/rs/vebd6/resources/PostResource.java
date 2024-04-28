@@ -66,10 +66,15 @@ public class PostResource {
     }
     private String getToken(){
         String token = headers.getHeaderString(HttpHeaders.AUTHORIZATION);
-        return token.split("Bearer ")[1];
+        if(token!=null) return token.split("Bearer ")[1];
+        else return null;
+
     }
 
     private boolean isAuthorized() {
-        return userService.isAuthorized(getToken());
+        String t = getToken();
+        if(t!=null)return userService.isAuthorized(getToken());
+        else return false;
+
     }
 }
