@@ -18,7 +18,7 @@ public class CommentRepPostgresSql extends PostgresSqlAbstractRepository impleme
 
             String[] generatedColumns = {"id"};
 
-            preparedStatement = connection.prepareStatement("INSERT INTO comment (author,text,postId) VALUES(?, ?,?)", generatedColumns);
+            preparedStatement = connection.prepareStatement("INSERT INTO comment (author,text,postid) VALUES(?, ?,?)", generatedColumns);
             preparedStatement.setString(1, comment.getAuthor());
             preparedStatement.setString(2, comment.getText());
             preparedStatement.setInt(3, comment.getPostId());

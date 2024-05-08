@@ -35,9 +35,8 @@
       <change afterPath="$PROJECT_DIR$/../m/raf/3/6/veb/Domaci2 Ognjen Nikolic RN12322/chat.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../m/raf/3/6/veb/Domaci2 Ognjen Nikolic RN12322/soket 2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/repository/MySqlAbstractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/repository/MySqlAbstractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/filters/AuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/repository/comment/CommentRepPostgresSql.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/repository/comment/CommentRepPostgresSql.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +197,7 @@
       <updated>1714245865143</updated>
       <workItem from="1714245866291" duration="14341000" />
       <workItem from="1714919301308" duration="471000" />
-      <workItem from="1715112365203" duration="2907000" />
+      <workItem from="1715112365203" duration="5775000" />
     </task>
     <task id="LOCAL-00001" summary="little fix">
       <option name="closed" value="true" />
@@ -208,7 +207,23 @@
       <option name="project" value="LOCAL" />
       <updated>1714330233705</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="little fix">
+      <option name="closed" value="true" />
+      <created>1715187039061</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1715187039061</updated>
+    </task>
+    <task id="LOCAL-00003" summary="little fix">
+      <option name="closed" value="true" />
+      <created>1715187101311</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715187101311</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
