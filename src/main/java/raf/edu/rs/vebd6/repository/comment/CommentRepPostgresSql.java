@@ -1,17 +1,15 @@
-package raf.edu.rs.vebd6.repository.post;
+package raf.edu.rs.vebd6.repository.comment;
 
-import raf.edu.rs.vebd6.entities.Post;
-import raf.edu.rs.vebd6.repository.MySqlAbstractRepository;
+import raf.edu.rs.vebd6.entities.Comment;
+import raf.edu.rs.vebd6.repository.PostgresSqlAbstractRepository;
 
 import java.sql.*;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PostRepMySql  extends MySqlAbstractRepository implements PostRepository {
+public class CommentRepPostgresSql extends PostgresSqlAbstractRepository implements CommentRepository {
     @Override
-    public Post addPost(Post post) {
+    public Comment addComment(Comment comment) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -20,16 +18,15 @@ public class PostRepMySql  extends MySqlAbstractRepository implements PostReposi
 
             String[] generatedColumns = {"id"};
 
-            preparedStatement = connection.prepareStatement("INSERT INTO posts (author,title, content,date) VALUES(?, ?,?,?)", generatedColumns);
-            preparedStatement.setString(1, post.getAuthor());
-            preparedStatement.setString(2, post.getTitle());
-            preparedStatement.setString(3, post.getContent());
-            preparedStatement.setString(4, LocalDate.now().format(DateTimeFormatter.ofPattern("dd:MM:yyyy")));
+            preparedStatement = connection.prepareStatement("INSERT INTO comment (author,text,postId) VALUES(?, ?,?)", generatedColumns);
+            preparedStatement.setString(1, comment.getAuthor());
+            preparedStatement.setString(2, comment.getText());
+            preparedStatement.setInt(3, comment.getPostId());
             preparedStatement.executeUpdate();
             resultSet = preparedStatement.getGeneratedKeys();
 
             if (resultSet.next()) {
-                post.setId(resultSet.getInt(1));
+                comment.setId(resultSet.getInt(1));
             }
 
         } catch (SQLException e) {
@@ -40,12 +37,12 @@ public class PostRepMySql  extends MySqlAbstractRepository implements PostReposi
             this.closeConnection(connection);
         }
 
-        return post;
+        return comment;
     }
 
     @Override
-    public List<Post> getPosts() {
-        List<Post> posts = new ArrayList<>();
+    public List<Comment> getComments() {
+        List<Comment> comms = new ArrayList<>();
 
         Connection connection = null;
         Statement statement = null;
@@ -54,9 +51,9 @@ public class PostRepMySql  extends MySqlAbstractRepository implements PostReposi
             connection = this.newConnection();
 
             statement = connection.createStatement();
-            resultSet = statement.executeQuery("select * from posts");
+            resultSet = statement.executeQuery("select * from comment");
             while (resultSet.next()) {
-                posts.add(new Post(resultSet.getInt("id"),resultSet.getString("author"), resultSet.getString("title"), resultSet.getString("content"),resultSet.getString("date")));
+                comms.add(new Comment(resultSet.getInt("id"),resultSet.getString("text"),resultSet.getString("author"), resultSet.getInt("postId")));
             }
 
         } catch (Exception e) {
@@ -67,12 +64,12 @@ public class PostRepMySql  extends MySqlAbstractRepository implements PostReposi
             this.closeConnection(connection);
         }
 
-        return posts;
+        return comms;
     }
 
     @Override
-    public Post findPost(Integer id) {
-        Post post = null;
+    public Comment findComment(Integer id) {
+        Comment comment = null;
 
         Connection connection = null;
         PreparedStatement preparedStatement = null;
@@ -80,12 +77,12 @@ public class PostRepMySql  extends MySqlAbstractRepository implements PostReposi
         try {
             connection = this.newConnection();
 
-            preparedStatement = connection.prepareStatement("SELECT * FROM posts where id = ?");
+            preparedStatement = connection.prepareStatement("SELECT * FROM comment where id = ?");
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                post = new Post(resultSet.getInt("id"),resultSet.getString("author"), resultSet.getString("title"), resultSet.getString("content"),resultSet.getString("date"));
+                comment = new Comment(resultSet.getInt("id"),resultSet.getString("text"),resultSet.getString("author"), resultSet.getInt("postId"));
             }
 
             resultSet.close();
@@ -99,17 +96,17 @@ public class PostRepMySql  extends MySqlAbstractRepository implements PostReposi
             this.closeConnection(connection);
         }
 
-        return post;
+        return comment;
     }
 
     @Override
-    public void deletePost(Integer id) {
+    public void deleteComment(Integer id) {
         Connection connection = null;
         PreparedStatement preparedStatement = null;
         try {
             connection = this.newConnection();
 
-            preparedStatement = connection.prepareStatement("DELETE FROM posts where id = ?");
+            preparedStatement = connection.prepareStatement("DELETE FROM comment where id = ?");
             preparedStatement.setInt(1, id);
             preparedStatement.executeUpdate();
 

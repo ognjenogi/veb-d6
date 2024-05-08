@@ -3,11 +3,11 @@ package raf.edu.rs.vebd6.repository;
 import java.sql.*;
 import java.util.Optional;
 
-abstract public class MySqlAbstractRepository {
+abstract public class PostgresSqlAbstractRepository {
 
-    public MySqlAbstractRepository() {
+    public PostgresSqlAbstractRepository() {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
@@ -15,7 +15,7 @@ abstract public class MySqlAbstractRepository {
 
     protected Connection newConnection() throws SQLException {
         return DriverManager.getConnection(
-                "jdbc:mysql://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabaseName(), this.getUsername(), this.getPassword()
+                "jdbc:postgresql://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabaseName(), this.getUsername(), this.getPassword()
         );
     }
 
@@ -24,19 +24,19 @@ abstract public class MySqlAbstractRepository {
     }
 
     protected int getPort() {
-        return 3306;
+        return 5432;
     }
 
     protected String getDatabaseName() {
-        return "veb6_schema";
+        return "postgres";
     }
 
     protected String getUsername() {
-        return "root";
+        return "Ognjen";
     }
 
     protected String getPassword() {
-        return "root";
+        return "kateta123";
     }
 
     protected void closeStatement(Statement statement) {
