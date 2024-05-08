@@ -34,11 +34,9 @@
       <change afterPath="$PROJECT_DIR$/../m/raf/3/5/skriptni jezici/.idea/skriptni jezici.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../m/raf/3/6/veb/Domaci2 Ognjen Nikolic RN12322/chat.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../m/raf/3/6/veb/Domaci2 Ognjen Nikolic RN12322/soket 2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/filters/AuthFilter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/entities/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/entities/Post.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/raf/edu/rs/vebd6/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -199,7 +197,7 @@
       <updated>1714245865143</updated>
       <workItem from="1714245866291" duration="14341000" />
       <workItem from="1714919301308" duration="471000" />
-      <workItem from="1715112365203" duration="6433000" />
+      <workItem from="1715112365203" duration="6861000" />
     </task>
     <task id="LOCAL-00001" summary="little fix">
       <option name="closed" value="true" />
@@ -233,7 +231,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715188806838</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="little fix">
+      <option name="closed" value="true" />
+      <created>1715189421778</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715189421778</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
