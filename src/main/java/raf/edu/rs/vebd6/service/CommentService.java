@@ -9,13 +9,9 @@ import java.util.List;
 public class CommentService {
     @Inject
     private CommentRepository commentRepository;
-    @Inject
-    private PostService postService;
     public Comment addComment(Integer id, Comment comment){
-        Post p= postService.findPost(id);
         comment.setPostId(id);
         commentRepository.addComment(comment);
-        p.getComments().add(comment);
         return comment;
     }
 
